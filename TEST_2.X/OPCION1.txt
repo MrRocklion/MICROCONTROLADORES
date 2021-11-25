@@ -1,0 +1,70 @@
+        __delay_ms(200);
+        if(PORTAbits.RA0 == 1){
+            i2 = 0;
+            i1+=1;
+        }
+        __delay_ms(10);
+        if(i1 == 1){
+            caso = 1;
+        }
+        if(i1 == 2){
+            caso = 3;
+            i1 = 0;
+            i2 = 0;
+        }
+        __delay_ms(10);    
+        if(PORTAbits.RA1 ==1){
+            i1 = 0;
+            i2+=1;
+
+        }
+            if(i1 == 1){
+                caso = 2;
+            }
+            if(i1 == 2){
+                caso = 3;
+                i1 = 0;
+                i2 = 0;
+            }
+  
+   
+         if(i2 == 1){
+                caso = 1;
+            }
+            if(i2 == 2){
+                caso = 3;
+                i1 = 0;
+                i2 = 0;
+            }
+          
+
+        switch(caso){
+            case 1:
+                counter += 1;
+                if(counter >=15){
+                    counter =0 ;
+                }
+                LATB = counter;
+                LATD = 0;
+                __delay_ms(1000);
+                break;
+            case 2:
+                counter += 1;
+                 if(counter >=15){
+                    counter =0 ;
+                }
+                
+                LATD = counter;
+                LATB = 0;
+                __delay_ms(1000);
+                break;
+            case 3:
+                LATB = 0;
+                LATD = 0;
+                break;
+            case 4:
+                LATB = 0;
+                LATD = 2;
+                break;
+               
+        }

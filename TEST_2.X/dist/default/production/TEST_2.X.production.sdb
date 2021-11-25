@@ -1,0 +1,137 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F1939 ]
+[d frameptr 6 ]
+"10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"45 C:\Users\David\MPLABXProjects\TEST_2.X\main.c
+[v _contador1 contador1 `(v  1 e 1 0 ]
+"62
+[v _contador2 contador2 `(v  1 e 1 0 ]
+"82
+[v _main main `(v  1 e 1 0 ]
+"50 C:\Users\David\MPLABXProjects\TEST_2.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"58
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"68
+[v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
+"55 C:\Users\David\MPLABXProjects\TEST_2.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+[s S106 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+`uc 1 RA7 1 0 :1:7 
+]
+"446 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1939.h
+[u S115 . 1 `S106 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES115  1 e 1 @12 ]
+"1313
+[v _TRISA TRISA `VEuc  1 e 1 @140 ]
+"1375
+[v _TRISB TRISB `VEuc  1 e 1 @141 ]
+"1437
+[v _TRISC TRISC `VEuc  1 e 1 @142 ]
+"1499
+[v _TRISD TRISD `VEuc  1 e 1 @143 ]
+"1561
+[v _TRISE TRISE `VEuc  1 e 1 @144 ]
+[s S57 . 1 `uc 1 PS0 1 0 :1:0 
+`uc 1 PS1 1 0 :1:1 
+`uc 1 PS2 1 0 :1:2 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 TMR0SE 1 0 :1:4 
+`uc 1 TMR0CS 1 0 :1:5 
+`uc 1 INTEDG 1 0 :1:6 
+`uc 1 nWPUEN 1 0 :1:7 
+]
+"1787
+[s S66 . 1 `uc 1 PS 1 0 :3:0 
+`uc 1 . 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+]
+[u S71 . 1 `S57 1 . 1 0 `S66 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES71  1 e 1 @149 ]
+"1898
+[v _WDTCON WDTCON `VEuc  1 e 1 @151 ]
+"1957
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @152 ]
+"2015
+[v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
+"2357
+[v _LATA LATA `VEuc  1 e 1 @268 ]
+"2419
+[v _LATB LATB `VEuc  1 e 1 @269 ]
+"2481
+[v _LATC LATC `VEuc  1 e 1 @270 ]
+"2543
+[v _LATD LATD `VEuc  1 e 1 @271 ]
+"2613
+[v _LATE LATE `VEuc  1 e 1 @272 ]
+"2923
+[v _BORCON BORCON `VEuc  1 e 1 @278 ]
+"3272
+[v _APFCON APFCON `VEuc  1 e 1 @285 ]
+"3328
+[v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
+"3386
+[v _ANSELB ANSELB `VEuc  1 e 1 @397 ]
+"3444
+[v _ANSELD ANSELD `VEuc  1 e 1 @399 ]
+"3514
+[v _ANSELE ANSELE `VEuc  1 e 1 @400 ]
+"4063
+[v _WPUB WPUB `VEuc  1 e 1 @525 ]
+"4133
+[v _WPUE WPUE `VEuc  1 e 1 @528 ]
+"82 C:\Users\David\MPLABXProjects\TEST_2.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"115
+} 0
+"62
+[v _contador2 contador2 `(v  1 e 1 0 ]
+{
+"64
+[v contador2@i i `i  1 a 2 2 ]
+"78
+} 0
+"45
+[v _contador1 contador1 `(v  1 e 1 0 ]
+{
+"47
+[v contador1@i i `i  1 a 2 2 ]
+"61
+} 0
+"50 C:\Users\David\MPLABXProjects\TEST_2.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"56
+} 0
+"68
+[v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
+{
+"72
+} 0
+"55 C:\Users\David\MPLABXProjects\TEST_2.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"101
+} 0
+"58 C:\Users\David\MPLABXProjects\TEST_2.X\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"66
+} 0
