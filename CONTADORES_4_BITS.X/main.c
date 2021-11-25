@@ -46,6 +46,40 @@
 /*
                          Main application
  */
+
+void contador1(void){
+    for(int i = 1 ; i <= 15; i++){
+        __delay_ms(200);
+        if(PORTAbits.RA1 ==1 ){
+            break;
+        }
+        LATB = i ; // esta linea se encargara de ir encendiendo los leds y apgandolos segun el numero que valga i
+        LATD = 0; // mantiene apagado todo el led D
+        if(PORTAbits.RA1 ==1 ){
+            break;
+        }
+        __delay_ms(1000);
+    }
+    return;
+    
+}
+void contador2(void){
+    for(int i = 1 ; i <= 15; i++){
+        __delay_ms(200);
+        if(PORTAbits.RA0 ==1 ){
+            break;
+        }
+        LATD = i ; // 1001 esta linea se encargara de ir encendiendo los leds y apgandolos segun el numero que valga i
+        LATB = 0; // mantiene apagado todo el led D
+        if(PORTAbits.RA0 ==1 ){
+            break;
+        }
+        __delay_ms(1000);
+    }
+    return;
+
+}
+
 void main(void)
 {
     // initialize the device
@@ -68,7 +102,17 @@ void main(void)
 
     while (1)
     {
-        // Add your application code
+        // aqui vamos a llamar a las funciones que hemos creado
+        
+        __delay_ms(100);
+        if(PORTAbits.RA0 == 1) // si presionamos el pulsador conectado al RA0 ,llamara a la funcion contador1
+        {
+            contador1();
+        }
+        if(PORTAbits.RA1 ==1){
+        contador2();
+        }
+            
     }
 }
 /**
