@@ -1,29 +1,18 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F183 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\builtins.h
-[v __delay `JF183 ~T0 @X0 0 e ]
-[p i __delay ]
-"391 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18875.h
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18875.h: 391:     struct {
-[s S33 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S33 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
-"390
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18875.h: 390: typedef union {
-[u S32 `S33 1 ]
-[n S32 . . ]
-"402
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18875.h: 402: extern volatile PORTAbits_t PORTAbits __attribute__((address(0x00C)));
-[v _PORTAbits `VS32 ~T0 @X0 0 e@12 ]
-"1013
+[p mainexit ]
+"70 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 70: void SYSTEM_Initialize(void);
+[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
+"78 main.c
+[; ;main.c: 78:  valor = ADCC_GetSingleConversion(channel_ANA0);
+[c E12221 0 60 61 62 63 .. ]
+[n E12221 . channel_ANA0 channel_VSS channel_Temp channel_DAC1 channel_FVR_buf1  ]
+"249 ./mcc_generated_files/adcc.h
+[; ;./mcc_generated_files/adcc.h: 249: adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel);
+[v _ADCC_GetSingleConversion `(us ~T0 @X0 0 ef1`E12221 ]
+"1013 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18875.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18875.h: 1013: extern volatile unsigned char LATB __attribute__((address(0x017)));
 [v _LATB `Vuc ~T0 @X0 0 e@23 ]
-"1137
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18875.h: 1137: extern volatile unsigned char LATD __attribute__((address(0x019)));
-[v _LATD `Vuc ~T0 @X0 0 e@25 ]
-[p mainexit ]
-"69 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 69: void SYSTEM_Initialize(void);
-[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
 "55 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18875.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18875.h: 55: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1662,190 +1651,132 @@ Version 4.0 HI-TECH Software Intermediate Code
 "36501
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18875.h: 36501: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"49 main.c
-[; ;main.c: 49: void contador1(void)
-[v _contador1 `(v ~T0 @X0 1 ef ]
-"50
-[; ;main.c: 50:     {
-{
-[e :U _contador1 ]
-[f ]
-"51
-[; ;main.c: 51:         for (int i = 1; i <= 15; i++) {
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 1 `i ]
-[e $ <= _i -> 15 `i 1621  ]
-[e $U 1622  ]
-[e :U 1621 ]
-{
-"52
-[; ;main.c: 52:             _delay((unsigned long)((200)*(31000/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 31000 `i `d .4000.0 `ul ]
-"53
-[; ;main.c: 53:             if (PORTAbits.RA1 == 1) {
-[e $ ! == -> . . _PORTAbits 0 1 `i -> 1 `i 1624  ]
-{
-"54
-[; ;main.c: 54:                 break;
-[e $U 1622  ]
-"55
-[; ;main.c: 55:             }
-}
-[e :U 1624 ]
-"56
-[; ;main.c: 56:             LATB = i;
-[e = _LATB -> _i `uc ]
-"57
-[; ;main.c: 57:             LATD = 0;
-[e = _LATD -> -> 0 `i `uc ]
-"58
-[; ;main.c: 58:             _delay((unsigned long)((200)*(31000/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 31000 `i `d .4000.0 `ul ]
-"59
-[; ;main.c: 59:             if (PORTAbits.RA1 == 1) {
-[e $ ! == -> . . _PORTAbits 0 1 `i -> 1 `i 1625  ]
-{
-"60
-[; ;main.c: 60:                 break;
-[e $U 1622  ]
-"61
-[; ;main.c: 61:             }
-}
-[e :U 1625 ]
-"62
-[; ;main.c: 62:             _delay((unsigned long)((1000)*(31000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 31000 `i `d .4000.0 `ul ]
-"63
-[; ;main.c: 63:         }
-}
-[e ++ _i -> 1 `i ]
-[e $ <= _i -> 15 `i 1621  ]
-[e :U 1622 ]
-}
-"64
-[; ;main.c: 64:         return;
-[e $UE 1620  ]
-"65
-[; ;main.c: 65:     }
-[e :UE 1620 ]
-}
-"66
-[; ;main.c: 66: void contador2(void)
-[v _contador2 `(v ~T0 @X0 1 ef ]
-"67
-[; ;main.c: 67:     {
-{
-[e :U _contador2 ]
-[f ]
-"68
-[; ;main.c: 68:         for (int i = 1; i <= 15; i++) {
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 1 `i ]
-[e $ <= _i -> 15 `i 1627  ]
-[e $U 1628  ]
-[e :U 1627 ]
-{
-"69
-[; ;main.c: 69:             _delay((unsigned long)((200)*(31000/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 31000 `i `d .4000.0 `ul ]
-"70
-[; ;main.c: 70:             if (PORTAbits.RA0 == 1) {
-[e $ ! == -> . . _PORTAbits 0 0 `i -> 1 `i 1630  ]
-{
-"71
-[; ;main.c: 71:                 break;
-[e $U 1628  ]
-"72
-[; ;main.c: 72:             }
-}
-[e :U 1630 ]
-"73
-[; ;main.c: 73:             LATD = i;
-[e = _LATD -> _i `uc ]
-"74
-[; ;main.c: 74:             LATB = 0;
-[e = _LATB -> -> 0 `i `uc ]
-"75
-[; ;main.c: 75:                   _delay((unsigned long)((200)*(31000/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 31000 `i `d .4000.0 `ul ]
-"76
-[; ;main.c: 76:             if (PORTAbits.RA0 == 1) {
-[e $ ! == -> . . _PORTAbits 0 0 `i -> 1 `i 1631  ]
-{
-"77
-[; ;main.c: 77:                 break;
-[e $U 1628  ]
-"78
-[; ;main.c: 78:             }
-}
-[e :U 1631 ]
-"79
-[; ;main.c: 79:             _delay((unsigned long)((1000)*(31000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 31000 `i `d .4000.0 `ul ]
-"80
-[; ;main.c: 80:         }
-}
-[e ++ _i -> 1 `i ]
-[e $ <= _i -> 15 `i 1627  ]
-[e :U 1628 ]
-}
-"81
-[; ;main.c: 81:         return;
-[e $UE 1626  ]
-"82
-[; ;main.c: 82:     }
-[e :UE 1626 ]
-}
 [v $root$_main `(v ~T0 @X0 0 e ]
-"86
-[; ;main.c: 86: void main(void)
+"53 main.c
+[; ;main.c: 53: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"87
-[; ;main.c: 87: {
+"54
+[; ;main.c: 54: {
 {
 [e :U _main ]
 [f ]
-"89
-[; ;main.c: 89:     SYSTEM_Initialize();
+"56
+[; ;main.c: 56:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"109
-[; ;main.c: 109:     while (1) {
-[e :U 1634 ]
+"58
+[; ;main.c: 58:     int valor;
+[v _valor `i ~T0 @X0 1 a ]
+"77
+[; ;main.c: 77:     while (1) {
+[e :U 1622 ]
 {
-"110
-[; ;main.c: 110:         _delay((unsigned long)((100)*(31000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 31000 `i `d .4000.0 `ul ]
-"111
-[; ;main.c: 111:         if (PORTAbits.RA0 == 1) {
-[e $ ! == -> . . _PORTAbits 0 0 `i -> 1 `i 1636  ]
+"78
+[; ;main.c: 78:  valor = ADCC_GetSingleConversion(channel_ANA0);
+[e = _valor -> ( _ADCC_GetSingleConversion (1 . `E12221 0 `i ]
+"79
+[; ;main.c: 79:         if (valor>=100){
+[e $ ! >= _valor -> 100 `i 1624  ]
 {
-"112
-[; ;main.c: 112:             contador1();
-[e ( _contador1 ..  ]
-"113
-[; ;main.c: 113:         }
+"80
+[; ;main.c: 80:             LATB = 0b00000001;
+[e = _LATB -> -> 1 `i `uc ]
+"81
+[; ;main.c: 81:        }
 }
-[e :U 1636 ]
-"114
-[; ;main.c: 114:         if (PORTAbits.RA1 == 1) {
-[e $ ! == -> . . _PORTAbits 0 1 `i -> 1 `i 1637  ]
+[e :U 1624 ]
+"82
+[; ;main.c: 82:         if (valor>=200){
+[e $ ! >= _valor -> 200 `i 1625  ]
 {
-"115
-[; ;main.c: 115:             contador2();
-[e ( _contador2 ..  ]
-"116
-[; ;main.c: 116:     }
+"83
+[; ;main.c: 83:             LATB = 0b00000011;
+[e = _LATB -> -> 3 `i `uc ]
+"84
+[; ;main.c: 84:        }
 }
-[e :U 1637 ]
-"117
-[; ;main.c: 117: }
+[e :U 1625 ]
+"85
+[; ;main.c: 85:         if (valor>=300){
+[e $ ! >= _valor -> 300 `i 1626  ]
+{
+"86
+[; ;main.c: 86:             LATB = 0b00000111;
+[e = _LATB -> -> 7 `i `uc ]
+"87
+[; ;main.c: 87:        }
 }
-[e :U 1633 ]
-[e $U 1634  ]
-[e :U 1635 ]
-"119
-[; ;main.c: 119: }
-[e :UE 1632 ]
+[e :U 1626 ]
+"88
+[; ;main.c: 88:         if (valor>=400){
+[e $ ! >= _valor -> 400 `i 1627  ]
+{
+"89
+[; ;main.c: 89:             LATB = 0b00001111;
+[e = _LATB -> -> 15 `i `uc ]
+"90
+[; ;main.c: 90:        }
+}
+[e :U 1627 ]
+"91
+[; ;main.c: 91:         if (valor>=500){
+[e $ ! >= _valor -> 500 `i 1628  ]
+{
+"92
+[; ;main.c: 92:             LATB = 0b00011111;
+[e = _LATB -> -> 31 `i `uc ]
+"93
+[; ;main.c: 93:        }
+}
+[e :U 1628 ]
+"94
+[; ;main.c: 94:         if (valor>=600){
+[e $ ! >= _valor -> 600 `i 1629  ]
+{
+"95
+[; ;main.c: 95:             LATB = 0b00111111;
+[e = _LATB -> -> 63 `i `uc ]
+"96
+[; ;main.c: 96:        }
+}
+[e :U 1629 ]
+"97
+[; ;main.c: 97:         if (valor>=800){
+[e $ ! >= _valor -> 800 `i 1630  ]
+{
+"98
+[; ;main.c: 98:             LATB = 0b01111111;
+[e = _LATB -> -> 127 `i `uc ]
+"99
+[; ;main.c: 99:        }
+}
+[e :U 1630 ]
+"100
+[; ;main.c: 100:        if (valor>=1000){
+[e $ ! >= _valor -> 1000 `i 1631  ]
+{
+"101
+[; ;main.c: 101:             LATB = 0b11111111;
+[e = _LATB -> -> 255 `i `uc ]
+"102
+[; ;main.c: 102:        }else{
+}
+[e $U 1632  ]
+[e :U 1631 ]
+{
+"103
+[; ;main.c: 103:             LATB = 0;
+[e = _LATB -> -> 0 `i `uc ]
+"104
+[; ;main.c: 104:        }
+}
+[e :U 1632 ]
+"105
+[; ;main.c: 105: }
+}
+[e :U 1621 ]
+[e $U 1622  ]
+[e :U 1623 ]
+"107
+[; ;main.c: 107: }
+[e :UE 1620 ]
 }

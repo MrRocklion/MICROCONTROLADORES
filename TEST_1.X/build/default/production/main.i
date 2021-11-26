@@ -20808,9 +20808,9 @@ extern __bank0 __bit __timeout;
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 278 "./mcc_generated_files/pin_manager.h"
+# 258 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 290 "./mcc_generated_files/pin_manager.h"
+# 270 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
@@ -20850,68 +20850,117 @@ extern __bit kbhit(void);
 extern char * cgets(char *);
 extern void cputs(const char *);
 # 54 "./mcc_generated_files/mcc.h" 2
-# 69 "./mcc_generated_files/mcc.h"
+
+# 1 "./mcc_generated_files/adcc.h" 1
+# 72 "./mcc_generated_files/adcc.h"
+typedef uint16_t adc_result_t;
+# 86 "./mcc_generated_files/adcc.h"
+typedef enum
+{
+    channel_ANA0 = 0x0,
+    channel_VSS = 0x3C,
+    channel_Temp = 0x3D,
+    channel_DAC1 = 0x3E,
+    channel_FVR_buf1 = 0x3F
+} adcc_channel_t;
+# 127 "./mcc_generated_files/adcc.h"
+void ADCC_Initialize(void);
+# 156 "./mcc_generated_files/adcc.h"
+void ADCC_StartConversion(adcc_channel_t channel);
+# 186 "./mcc_generated_files/adcc.h"
+_Bool ADCC_IsConversionDone(void);
+# 218 "./mcc_generated_files/adcc.h"
+adc_result_t ADCC_GetConversionResult(void);
+# 249 "./mcc_generated_files/adcc.h"
+adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel);
+# 274 "./mcc_generated_files/adcc.h"
+void ADCC_StopConversion(void);
+# 301 "./mcc_generated_files/adcc.h"
+void ADCC_SetStopOnInterrupt(void);
+# 326 "./mcc_generated_files/adcc.h"
+void ADCC_DischargeSampleCapacitor(void);
+# 352 "./mcc_generated_files/adcc.h"
+void ADCC_LoadAcquisitionRegister(uint8_t);
+# 378 "./mcc_generated_files/adcc.h"
+void ADCC_SetPrechargeTime(uint8_t);
+# 403 "./mcc_generated_files/adcc.h"
+void ADCC_SetRepeatCount(uint8_t);
+# 431 "./mcc_generated_files/adcc.h"
+uint8_t ADCC_GetCurrentCountofConversions(void);
+# 455 "./mcc_generated_files/adcc.h"
+void ADCC_ClearAccumulator(void);
+# 480 "./mcc_generated_files/adcc.h"
+uint16_t ADCC_GetAccumulatorValue(void);
+# 508 "./mcc_generated_files/adcc.h"
+_Bool ADCC_HasAccumulatorOverflowed(void);
+# 533 "./mcc_generated_files/adcc.h"
+uint16_t ADCC_GetFilterValue(void);
+# 561 "./mcc_generated_files/adcc.h"
+uint16_t ADCC_GetPreviousResult(void);
+# 587 "./mcc_generated_files/adcc.h"
+void ADCC_DefineSetPoint(uint16_t);
+# 613 "./mcc_generated_files/adcc.h"
+void ADCC_SetUpperThreshold(uint16_t);
+# 639 "./mcc_generated_files/adcc.h"
+void ADCC_SetLowerThreshold(uint16_t);
+# 666 "./mcc_generated_files/adcc.h"
+uint16_t ADCC_GetErrorCalculation(void);
+# 693 "./mcc_generated_files/adcc.h"
+void ADCC_EnableDoubleSampling(void);
+# 717 "./mcc_generated_files/adcc.h"
+void ADCC_EnableContinuousConversion(void);
+# 741 "./mcc_generated_files/adcc.h"
+void ADCC_DisableContinuousConversion(void);
+# 769 "./mcc_generated_files/adcc.h"
+_Bool ADCC_HasErrorCrossedUpperThreshold(void);
+# 797 "./mcc_generated_files/adcc.h"
+_Bool ADCC_HasErrorCrossedLowerThreshold(void);
+# 824 "./mcc_generated_files/adcc.h"
+uint8_t ADCC_GetConversionStageStatus(void);
+# 55 "./mcc_generated_files/mcc.h" 2
+# 70 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 82 "./mcc_generated_files/mcc.h"
+# 83 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 95 "./mcc_generated_files/mcc.h"
+# 96 "./mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
 # 44 "main.c" 2
-
-
-
-
-
-void contador1(void)
-    {
-        for (int i = 1; i <= 15; i++) {
-            _delay((unsigned long)((200)*(31000/4000.0)));
-            if (PORTAbits.RA1 == 1) {
-                break;
-            }
-            LATB = i;
-            LATD = 0;
-            _delay((unsigned long)((200)*(31000/4000.0)));
-            if (PORTAbits.RA1 == 1) {
-                break;
-            }
-            _delay((unsigned long)((1000)*(31000/4000.0)));
-        }
-        return;
-    }
-void contador2(void)
-    {
-        for (int i = 1; i <= 15; i++) {
-            _delay((unsigned long)((200)*(31000/4000.0)));
-            if (PORTAbits.RA0 == 1) {
-                break;
-            }
-            LATD = i;
-            LATB = 0;
-                  _delay((unsigned long)((200)*(31000/4000.0)));
-            if (PORTAbits.RA0 == 1) {
-                break;
-            }
-            _delay((unsigned long)((1000)*(31000/4000.0)));
-        }
-        return;
-    }
-
-
-
+# 53 "main.c"
 void main(void)
 {
 
     SYSTEM_Initialize();
-# 109 "main.c"
+
+    int valor;
+# 77 "main.c"
     while (1) {
-        _delay((unsigned long)((100)*(31000/4000.0)));
-        if (PORTAbits.RA0 == 1) {
-            contador1();
-        }
-        if (PORTAbits.RA1 == 1) {
-            contador2();
-    }
+ valor = ADCC_GetSingleConversion(channel_ANA0);
+        if (valor>=100){
+            LATB = 0b00000001;
+       }
+        if (valor>=200){
+            LATB = 0b00000011;
+       }
+        if (valor>=300){
+            LATB = 0b00000111;
+       }
+        if (valor>=400){
+            LATB = 0b00001111;
+       }
+        if (valor>=500){
+            LATB = 0b00011111;
+       }
+        if (valor>=600){
+            LATB = 0b00111111;
+       }
+        if (valor>=800){
+            LATB = 0b01111111;
+       }
+       if (valor>=1000){
+            LATB = 0b11111111;
+       }else{
+            LATB = 0;
+       }
 }
 
 }

@@ -42,40 +42,7 @@
 */
 
 #include "mcc_generated_files/mcc.h"
-void contador1(void)
-    {
-        for (int i = 1; i <= 15; i++) {
-            __delay_ms(200);
-            if (PORTAbits.RA1 == 1) {
-                break;
-            }
-            LATB = i;
-            LATD = 0;
-            __delay_ms(200);
-            if (PORTAbits.RA1 == 1) {
-                break;
-            }
-            __delay_ms(1000);
-        }
-        return;
-    }
-void contador2(void)
-    {
-        for (int i = 1; i <= 15; i++) {
-            __delay_ms(200);
-            if (PORTAbits.RA0 == 1) {
-                break;
-            }
-            LATD = i;
-            LATB = 0;
-                  __delay_ms(200);
-            if (PORTAbits.RA0 == 1) {
-                break;
-            }
-            __delay_ms(1000);
-        }
-        return;
-    }
+
 /*
                          Main application
  */
@@ -84,7 +51,7 @@ void main(void)
     // initialize the device
     SYSTEM_Initialize();
 
-
+    int valor;
 
     // When using interrupts, you need to set the Global and Peripheral Interrupt Enable bits
     // Use the following macros to:
@@ -103,13 +70,34 @@ void main(void)
 
 
     while (1) {
-        __delay_ms(100);
-        if (PORTAbits.RA0 == 1) {
-            contador1();
-        }
-        if (PORTAbits.RA1 == 1) {
-            contador2();
-    }
+       valor = ADC_GetConversion(POT);
+        if (valor>=100){
+            LATB = 0b00000001;
+       }
+        if (valor>=200){
+            LATB = 0b00000011;
+       }
+        if (valor>=300){
+            LATB = 0b00000111;
+       }
+        if (valor>=400){
+            LATB = 0b00001111;
+       }
+        if (valor>=500){
+            LATB = 0b00011111;
+       }
+        if (valor>=600){
+            LATB = 0b00111111;
+       }
+        if (valor>=800){
+            LATB = 0b01111111;
+       }
+       if (valor>=1000){
+            LATB = 0b11111111;
+       }else{
+            LATB = 0;
+       }
+      
 }
 
 }
