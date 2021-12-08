@@ -78,7 +78,7 @@ void PIN_MANAGER_Initialize(void)
     ANSELD = 0xF0;
     ANSELB = 0x00;
     ANSELE = 0x07;
-    ANSELA = 0x3F;
+    ANSELA = 0x38;
 
     /**
     WPUx registers
@@ -97,6 +97,8 @@ void PIN_MANAGER_Initialize(void)
 
 
    
+    // Enable IOCI interrupt 
+    INTCONbits.IOCIE = 1; 
     
 }
   

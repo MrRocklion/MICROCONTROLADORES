@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <executable name="dist/default/production\CISNE_PRACTICA_7SEG.X.production.hex">
+    <memory name="program">
+      <units>words</units>
+      <length>8192</length>
+      <used>688</used>
+      <free>7504</free>
+    </memory>
+    <memory name="data">
+      <units>bytes</units>
+      <length>1024</length>
+      <used>31</used>
+      <free>993</free>
+    </memory>
+  </executable>
+</project>

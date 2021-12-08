@@ -20808,9 +20808,9 @@ extern __bank0 __bit __timeout;
 # 50 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/pin_manager.h" 1
-# 258 "mcc_generated_files/pin_manager.h"
+# 298 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 270 "mcc_generated_files/pin_manager.h"
+# 310 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "mcc_generated_files/mcc.h" 2
 
@@ -20850,79 +20850,11 @@ extern __bit kbhit(void);
 extern char * cgets(char *);
 extern void cputs(const char *);
 # 54 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/adcc.h" 1
-# 72 "mcc_generated_files/adcc.h"
-typedef uint16_t adc_result_t;
-# 86 "mcc_generated_files/adcc.h"
-typedef enum
-{
-    channel_ANA0 = 0x0,
-    channel_VSS = 0x3C,
-    channel_Temp = 0x3D,
-    channel_DAC1 = 0x3E,
-    channel_FVR_buf1 = 0x3F
-} adcc_channel_t;
-# 127 "mcc_generated_files/adcc.h"
-void ADCC_Initialize(void);
-# 156 "mcc_generated_files/adcc.h"
-void ADCC_StartConversion(adcc_channel_t channel);
-# 186 "mcc_generated_files/adcc.h"
-_Bool ADCC_IsConversionDone(void);
-# 218 "mcc_generated_files/adcc.h"
-adc_result_t ADCC_GetConversionResult(void);
-# 249 "mcc_generated_files/adcc.h"
-adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel);
-# 274 "mcc_generated_files/adcc.h"
-void ADCC_StopConversion(void);
-# 301 "mcc_generated_files/adcc.h"
-void ADCC_SetStopOnInterrupt(void);
-# 326 "mcc_generated_files/adcc.h"
-void ADCC_DischargeSampleCapacitor(void);
-# 352 "mcc_generated_files/adcc.h"
-void ADCC_LoadAcquisitionRegister(uint8_t);
-# 378 "mcc_generated_files/adcc.h"
-void ADCC_SetPrechargeTime(uint8_t);
-# 403 "mcc_generated_files/adcc.h"
-void ADCC_SetRepeatCount(uint8_t);
-# 431 "mcc_generated_files/adcc.h"
-uint8_t ADCC_GetCurrentCountofConversions(void);
-# 455 "mcc_generated_files/adcc.h"
-void ADCC_ClearAccumulator(void);
-# 480 "mcc_generated_files/adcc.h"
-uint16_t ADCC_GetAccumulatorValue(void);
-# 508 "mcc_generated_files/adcc.h"
-_Bool ADCC_HasAccumulatorOverflowed(void);
-# 533 "mcc_generated_files/adcc.h"
-uint16_t ADCC_GetFilterValue(void);
-# 561 "mcc_generated_files/adcc.h"
-uint16_t ADCC_GetPreviousResult(void);
-# 587 "mcc_generated_files/adcc.h"
-void ADCC_DefineSetPoint(uint16_t);
-# 613 "mcc_generated_files/adcc.h"
-void ADCC_SetUpperThreshold(uint16_t);
-# 639 "mcc_generated_files/adcc.h"
-void ADCC_SetLowerThreshold(uint16_t);
-# 666 "mcc_generated_files/adcc.h"
-uint16_t ADCC_GetErrorCalculation(void);
-# 693 "mcc_generated_files/adcc.h"
-void ADCC_EnableDoubleSampling(void);
-# 717 "mcc_generated_files/adcc.h"
-void ADCC_EnableContinuousConversion(void);
-# 741 "mcc_generated_files/adcc.h"
-void ADCC_DisableContinuousConversion(void);
-# 769 "mcc_generated_files/adcc.h"
-_Bool ADCC_HasErrorCrossedUpperThreshold(void);
-# 797 "mcc_generated_files/adcc.h"
-_Bool ADCC_HasErrorCrossedLowerThreshold(void);
-# 824 "mcc_generated_files/adcc.h"
-uint8_t ADCC_GetConversionStageStatus(void);
-# 55 "mcc_generated_files/mcc.h" 2
-# 70 "mcc_generated_files/mcc.h"
+# 69 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 83 "mcc_generated_files/mcc.h"
+# 82 "mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 96 "mcc_generated_files/mcc.h"
+# 95 "mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
 # 47 "mcc_generated_files/mcc.c" 2
 
@@ -20933,7 +20865,6 @@ void SYSTEM_Initialize(void)
     PMD_Initialize();
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
-    ADCC_Initialize();
 }
 
 void OSCILLATOR_Initialize(void)

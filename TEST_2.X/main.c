@@ -42,25 +42,29 @@
 */
 
 #include "mcc_generated_files/mcc.h"
-
+#include "funciones.h"
+#include "variables_globales.h"
+#include "mcc_generated_files/tmr0.h"
 /*
                          Main application
  */
+
+
+
 void main(void)
 {
     // initialize the device
     SYSTEM_Initialize();
 
-    int valor;
 
     // When using interrupts, you need to set the Global and Peripheral Interrupt Enable bits
     // Use the following macros to:
 
     // Enable the Global Interrupts
-    //INTERRUPT_GlobalInterruptEnable();
-
+    INTERRUPT_GlobalInterruptEnable();
+    
     // Enable the Peripheral Interrupts
-    //INTERRUPT_PeripheralInterruptEnable();
+    INTERRUPT_PeripheralInterruptEnable();
 
     // Disable the Global Interrupts
     //INTERRUPT_GlobalInterruptDisable();
@@ -68,40 +72,23 @@ void main(void)
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
 
-
+   
     while (1) {
-       valor = ADC_GetConversion(POT);
-        if (valor>=100){
-            LATB = 0b00000001;
-       }
-        if (valor>=200){
-            LATB = 0b00000011;
-       }
-        if (valor>=300){
-            LATB = 0b00000111;
-       }
-        if (valor>=400){
-            LATB = 0b00001111;
-       }
-        if (valor>=500){
-            LATB = 0b00011111;
-       }
-        if (valor>=600){
-            LATB = 0b00111111;
-       }
-        if (valor>=800){
-            LATB = 0b01111111;
-       }
-       if (valor>=1000){
-            LATB = 0b11111111;
-       }else{
-            LATB = 0;
-       }
-      
-}
+        switch (j) {
+            case 0:
+                secuencia1(i);
+                break;
+            case 1:
+                secuencia2(i);
+                break;
+            case 2:
+                secuencia3(i);
+                break;
+             
+        }
 
-}
-
+        
+    }}
 /**
  End of File
 */

@@ -47,15 +47,123 @@
                          Main application
  */
 
-/*
-                         Main application
- */
+
+void secuencia1(void){
+    for(int i = 1 ; i <= 15; i++){
+
+        if(PORTAbits.RA1 ==1 || PORTAbits.RA2 ==1 ){
+            break;
+        }
+                
+        LATB = 0b01100001; //1
+        __delay_ms(1000);
+      if(PORTAbits.RA1 ==1 || PORTAbits.RA2 ==1 ){
+            break;
+        }
+        LATB = 0b11110010; //3
+        __delay_ms(1000);
+      if(PORTAbits.RA1 ==1 || PORTAbits.RA2 ==1 ){
+            break;
+        }
+        LATB = 0b10110110; //5
+        __delay_ms(1000);
+
+        LATB = 0b11100100; //7
+        __delay_ms(1000);
+      if(PORTAbits.RA1 ==1 || PORTAbits.RA2 ==1 ){
+            break;
+        }
+        LATB = 0b11110110; //9
+        __delay_ms(1000);
+        if(PORTAbits.RA1 ==1 || PORTAbits.RA2 ==1 ){
+            break;
+        }}
+        
+        return;
+};
+void secuencia2(void){
+    for(int i = 1 ; i <= 15; i++){
+        __delay_ms(200);
+        if(PORTAbits.RA0 ==1 || PORTAbits.RA2 ==1 ){
+            break;
+        }
+                
+        LATB = 0b11111101; //0
+        __delay_ms(1000);
+  if(PORTAbits.RA0 ==1 || PORTAbits.RA2 ==1 ){
+            break;
+        }
+        LATB = 0b11011010; //2
+        __delay_ms(1000);
+  if(PORTAbits.RA0 ==1 || PORTAbits.RA2 ==1 ){
+            break;
+        }
+        LATB = 0b01100110; //4
+        __delay_ms(1000);
+  if(PORTAbits.RA0 ==1 || PORTAbits.RA2 ==1 ){
+            break;
+        }
+        LATB = 0b10111110; //6
+        __delay_ms(1000);
+  if(PORTAbits.RA0 ==1 || PORTAbits.RA2 ==1 ){
+            break;
+        }
+        LATB = 0b11111111; // 8
+        __delay_ms(1000);
+
+//
+        if(PORTAbits.RA0 ==1 || PORTAbits.RA2 ==1 ){
+            break;
+        }}
+        
+        return;
+};
+void secuencia3(void){
+    for(int i = 1 ; i <= 15; i++){
+        __delay_ms(200);
+        if(PORTAbits.RA0 ==1 || PORTAbits.RA1 ==1  ){
+            break;
+        }
+                
+          LATB = 0b11101110; //A
+        __delay_ms(1000);
+          if(PORTAbits.RA0 ==1 || PORTAbits.RA1 ==1 ){
+            break;
+        }
+          LATB = 0b00111110; //B
+        __delay_ms(1000);
+          if(PORTAbits.RA0 ==1 || PORTAbits.RA1 ==1 ){
+            break;
+        }
+          LATB = 0b10011100; //C
+        __delay_ms(1000);
+          if(PORTAbits.RA0 ==1 || PORTAbits.RA1 ==1 ){
+            break;
+        }
+          LATB = 0b01111010; //D
+        __delay_ms(1000);
+          if(PORTAbits.RA0 ==1 || PORTAbits.RA1 ==1 ){
+            break;
+        }
+          LATB = 0b10011110; //E
+        __delay_ms(1000);
+          if(PORTAbits.RA0 ==1 || PORTAbits.RA1 ==1 ){
+            break;
+        }
+          LATB = 0b10001110; //F
+        __delay_ms(1000);
+        
+
+        if(PORTAbits.RA0 ==1 || PORTAbits.RA1 ==1 ){
+            break;
+        }
+        }
+        return;
+};
 void main(void)
 {
     // initialize the device
     SYSTEM_Initialize();
-
-    int valor;
 
 
     // When using interrupts, you need to set the Global and Peripheral Interrupt Enable bits
@@ -75,36 +183,24 @@ void main(void)
 
 
     while (1) {
- valor = ADCC_GetSingleConversion(channel_ANA0);
-        if (valor>=100){
-            LATB = 0b00000001;
-       }
-        if (valor>=200){
-            LATB = 0b00000011;
-       }
-        if (valor>=300){
-            LATB = 0b00000111;
-       }
-        if (valor>=400){
-            LATB = 0b00001111;
-       }
-        if (valor>=500){
-            LATB = 0b00011111;
-       }
-        if (valor>=600){
-            LATB = 0b00111111;
-       }
-        if (valor>=800){
-            LATB = 0b01111111;
-       }
-       if (valor>=1000){
-            LATB = 0b11111111;
-       }else{
-            LATB = 0;
-       }
+        __delay_ms(200);
+        
+        if (PORTAbits.RA0 == 1) {
+            secuencia1();
+        }
+        if (PORTAbits.RA1 == 1) {
+            secuencia2();
+        }
+        if (PORTAbits.RA2 == 1) {
+            secuencia3();
+        }
+
+
+
+    }
 }
 
-}
+
 /**
  End of File
 */

@@ -52,7 +52,8 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <conio.h>
-#include "adc.h"
+#include "interrupt_manager.h"
+#include "tmr0.h"
 
 
 

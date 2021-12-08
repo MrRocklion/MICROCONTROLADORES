@@ -68,7 +68,37 @@ void main(void)
 
     while (1)
     {
+        valor = ADCC_GetSingleConversion(POT); //5v - 1024
+        // ESTA FUNCION NOS DEVUELVE LA CONVERSION ANALOGO A DIGITAL
         
+        if(valor >=100){
+            LATB= 0b00000001;
+        }
+            if(valor >=200){
+            LATB= 0b00000011;
+        }
+            if(valor >=300){
+            LATB= 0b00000111;
+        }
+            if(valor >=400){
+            LATB= 0b00001111;
+        }
+            if(valor >=500){
+            LATB= 0b00011111;
+        }
+            if(valor >=600){
+            LATB= 0b00111111;
+        }
+            if(valor >=800){
+            LATB= 0b01111111;
+        }
+            if(valor >=1000){
+            LATB= 0b11111111;
+        }
+            else{
+            LATB= 0; // EN EL LAT PUEDES COLOCAR EN FORMATO BINARIO O EN SU DEFECTO EL NUMERO QUE REPRESENTA ESE BINARIO DE 
+            // 8 BITS EJEMPLO  O = 0b0000000;
+        }
     }
 }
 /**

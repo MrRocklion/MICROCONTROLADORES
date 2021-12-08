@@ -5281,9 +5281,9 @@ extern __bank0 __bit __timeout;
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 222 "./mcc_generated_files/pin_manager.h"
+# 250 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 234 "./mcc_generated_files/pin_manager.h"
+# 262 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
@@ -5410,48 +5410,55 @@ extern char * cgets(char *);
 extern void cputs(const char *);
 # 54 "./mcc_generated_files/mcc.h" 2
 
-# 1 "./mcc_generated_files/adc.h" 1
-# 72 "./mcc_generated_files/adc.h"
-typedef uint16_t adc_result_t;
-
-
-
-
-typedef struct
-{
-    adc_result_t adcResult1;
-    adc_result_t adcResult2;
-} adc_sync_double_result_t;
-# 95 "./mcc_generated_files/adc.h"
-typedef enum
-{
-    POT = 0x0,
-    channel_Temp = 0x1D,
-    channel_DAC = 0x1E,
-    channel_FVR = 0x1F
-} adc_channel_t;
-# 136 "./mcc_generated_files/adc.h"
-void ADC_Initialize(void);
-# 166 "./mcc_generated_files/adc.h"
-void ADC_SelectChannel(adc_channel_t channel);
-# 193 "./mcc_generated_files/adc.h"
-void ADC_StartConversion(void);
-# 225 "./mcc_generated_files/adc.h"
-_Bool ADC_IsConversionDone(void);
-# 258 "./mcc_generated_files/adc.h"
-adc_result_t ADC_GetConversionResult(void);
-# 288 "./mcc_generated_files/adc.h"
-adc_result_t ADC_GetConversion(adc_channel_t channel);
-# 316 "./mcc_generated_files/adc.h"
-void ADC_TemperatureAcquisitionDelay(void);
+# 1 "./mcc_generated_files/interrupt_manager.h" 1
 # 55 "./mcc_generated_files/mcc.h" 2
-# 70 "./mcc_generated_files/mcc.h"
+
+# 1 "./mcc_generated_files/tmr0.h" 1
+# 98 "./mcc_generated_files/tmr0.h"
+void TMR0_Initialize(void);
+# 129 "./mcc_generated_files/tmr0.h"
+uint8_t TMR0_ReadTimer(void);
+# 168 "./mcc_generated_files/tmr0.h"
+void TMR0_WriteTimer(uint8_t timerVal);
+# 204 "./mcc_generated_files/tmr0.h"
+void TMR0_Reload(void);
+# 219 "./mcc_generated_files/tmr0.h"
+void TMR0_ISR(void);
+# 238 "./mcc_generated_files/tmr0.h"
+ void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
+# 256 "./mcc_generated_files/tmr0.h"
+extern void (*TMR0_InterruptHandler)(void);
+# 274 "./mcc_generated_files/tmr0.h"
+void TMR0_DefaultInterruptHandler(void);
+# 56 "./mcc_generated_files/mcc.h" 2
+# 71 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 83 "./mcc_generated_files/mcc.h"
+# 84 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 95 "./mcc_generated_files/mcc.h"
+# 96 "./mcc_generated_files/mcc.h"
 void WDT_Initialize(void);
 # 44 "main.c" 2
+
+# 1 "./funciones.h" 1
+# 79 "./funciones.h"
+void secuencia1(int p);
+void secuencia2(int p);
+void secuencia3(int p);
+# 45 "main.c" 2
+
+# 1 "./variables_globales.h" 1
+# 79 "./variables_globales.h"
+int i=0;
+int j=1;
+int k=1;
+int l=1;
+int x=0;
+int h=1;
+int dh=1;
+# 46 "main.c" 2
+
+
+
 
 
 
@@ -5462,37 +5469,18 @@ void main(void)
 
     SYSTEM_Initialize();
 
-    int valor;
-# 72 "main.c"
+
+
+
+
+
+    (INTCONbits.GIE = 1);
+
+
+    (INTCONbits.PEIE = 1);
+# 76 "main.c"
     while (1) {
-       valor = ADC_GetConversion(POT);
-        if (valor>=100){
-            LATB = 0b00000001;
-       }
-        if (valor>=200){
-            LATB = 0b00000011;
-       }
-        if (valor>=300){
-            LATB = 0b00000111;
-       }
-        if (valor>=400){
-            LATB = 0b00001111;
-       }
-        if (valor>=500){
-            LATB = 0b00011111;
-       }
-        if (valor>=600){
-            LATB = 0b00111111;
-       }
-        if (valor>=800){
-            LATB = 0b01111111;
-       }
-       if (valor>=1000){
-            LATB = 0b11111111;
-       }else{
-            LATB = 0;
-       }
 
-}
+        secuencia1(i);
 
-}
+    }}
