@@ -104,6 +104,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 "36122
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18875.h: 36122: extern volatile unsigned char INLVLE __attribute__((address(0xF68)));
 [v _INLVLE `Vuc ~T0 @X0 0 e@3944 ]
+"31528
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18875.h: 31528: extern volatile unsigned char SSP1CLKPPS __attribute__((address(0xEC5)));
+[v _SSP1CLKPPS `Vuc ~T0 @X0 0 e@3781 ]
+"32894
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18875.h: 32894: extern volatile unsigned char RC3PPS __attribute__((address(0xF23)));
+[v _RC3PPS `Vuc ~T0 @X0 0 e@3875 ]
+"32944
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18875.h: 32944: extern volatile unsigned char RC4PPS __attribute__((address(0xF24)));
+[v _RC4PPS `Vuc ~T0 @X0 0 e@3876 ]
+"31580
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18875.h: 31580: extern volatile unsigned char SSP1DATPPS __attribute__((address(0xEC6)));
+[v _SSP1DATPPS `Vuc ~T0 @X0 0 e@3782 ]
 "55 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18875.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18875.h: 55: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1772,8 +1784,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pin_manager.c: 70:     TRISA = 0xFF;
 [e = _TRISA -> -> 255 `i `uc ]
 "71
-[; ;mcc_generated_files/pin_manager.c: 71:     TRISB = 0x00;
-[e = _TRISB -> -> 0 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 71:     TRISB = 0xFF;
+[e = _TRISB -> -> 255 `i `uc ]
 "72
 [; ;mcc_generated_files/pin_manager.c: 72:     TRISC = 0xFF;
 [e = _TRISC -> -> 255 `i `uc ]
@@ -1784,8 +1796,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pin_manager.c: 78:     ANSELD = 0xF0;
 [e = _ANSELD -> -> 240 `i `uc ]
 "79
-[; ;mcc_generated_files/pin_manager.c: 79:     ANSELC = 0xFF;
-[e = _ANSELC -> -> 255 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 79:     ANSELC = 0xE7;
+[e = _ANSELC -> -> 231 `i `uc ]
 "80
 [; ;mcc_generated_files/pin_manager.c: 80:     ANSELB = 0xF0;
 [e = _ANSELB -> -> 240 `i `uc ]
@@ -1793,8 +1805,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pin_manager.c: 81:     ANSELE = 0x07;
 [e = _ANSELE -> -> 7 `i `uc ]
 "82
-[; ;mcc_generated_files/pin_manager.c: 82:     ANSELA = 0xF8;
-[e = _ANSELA -> -> 248 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 82:     ANSELA = 0xFF;
+[e = _ANSELA -> -> 255 `i `uc ]
 "87
 [; ;mcc_generated_files/pin_manager.c: 87:     WPUD = 0x00;
 [e = _WPUD -> -> 0 `i `uc ]
@@ -1855,19 +1867,31 @@ Version 4.0 HI-TECH Software Intermediate Code
 "118
 [; ;mcc_generated_files/pin_manager.c: 118:     INLVLE = 0x07;
 [e = _INLVLE -> -> 7 `i `uc ]
-"126
-[; ;mcc_generated_files/pin_manager.c: 126: }
+"127
+[; ;mcc_generated_files/pin_manager.c: 127:     SSP1CLKPPS = 0x13;
+[e = _SSP1CLKPPS -> -> 19 `i `uc ]
+"128
+[; ;mcc_generated_files/pin_manager.c: 128:     RC3PPS = 0x14;
+[e = _RC3PPS -> -> 20 `i `uc ]
+"129
+[; ;mcc_generated_files/pin_manager.c: 129:     RC4PPS = 0x15;
+[e = _RC4PPS -> -> 21 `i `uc ]
+"130
+[; ;mcc_generated_files/pin_manager.c: 130:     SSP1DATPPS = 0x14;
+[e = _SSP1DATPPS -> -> 20 `i `uc ]
+"131
+[; ;mcc_generated_files/pin_manager.c: 131: }
 [e :UE 1620 ]
 }
-"128
-[; ;mcc_generated_files/pin_manager.c: 128: void PIN_MANAGER_IOC(void)
+"133
+[; ;mcc_generated_files/pin_manager.c: 133: void PIN_MANAGER_IOC(void)
 [v _PIN_MANAGER_IOC `(v ~T0 @X0 1 ef ]
-"129
-[; ;mcc_generated_files/pin_manager.c: 129: {
+"134
+[; ;mcc_generated_files/pin_manager.c: 134: {
 {
 [e :U _PIN_MANAGER_IOC ]
 [f ]
-"130
-[; ;mcc_generated_files/pin_manager.c: 130: }
+"135
+[; ;mcc_generated_files/pin_manager.c: 135: }
 [e :UE 1621 ]
 }

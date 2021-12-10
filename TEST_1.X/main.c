@@ -42,124 +42,12 @@
 */
 
 #include "mcc_generated_files/mcc.h"
-
+#include "LCD_I2C.h"
 /*
                          Main application
  */
 
 
-void secuencia1(void){
-    for(int i = 1 ; i <= 15; i++){
-
-        if(PORTAbits.RA1 ==1 || PORTAbits.RA2 ==1 ){
-            break;
-        }
-                
-        LATB = 0b01100001; //1
-        __delay_ms(1000);
-      if(PORTAbits.RA1 ==1 || PORTAbits.RA2 ==1 ){
-            break;
-        }
-        LATB = 0b11110010; //3
-        __delay_ms(1000);
-      if(PORTAbits.RA1 ==1 || PORTAbits.RA2 ==1 ){
-            break;
-        }
-        LATB = 0b10110110; //5
-        __delay_ms(1000);
-
-        LATB = 0b11100100; //7
-        __delay_ms(1000);
-      if(PORTAbits.RA1 ==1 || PORTAbits.RA2 ==1 ){
-            break;
-        }
-        LATB = 0b11110110; //9
-        __delay_ms(1000);
-        if(PORTAbits.RA1 ==1 || PORTAbits.RA2 ==1 ){
-            break;
-        }}
-        
-        return;
-};
-void secuencia2(void){
-    for(int i = 1 ; i <= 15; i++){
-        __delay_ms(200);
-        if(PORTAbits.RA0 ==1 || PORTAbits.RA2 ==1 ){
-            break;
-        }
-                
-        LATB = 0b11111101; //0
-        __delay_ms(1000);
-  if(PORTAbits.RA0 ==1 || PORTAbits.RA2 ==1 ){
-            break;
-        }
-        LATB = 0b11011010; //2
-        __delay_ms(1000);
-  if(PORTAbits.RA0 ==1 || PORTAbits.RA2 ==1 ){
-            break;
-        }
-        LATB = 0b01100110; //4
-        __delay_ms(1000);
-  if(PORTAbits.RA0 ==1 || PORTAbits.RA2 ==1 ){
-            break;
-        }
-        LATB = 0b10111110; //6
-        __delay_ms(1000);
-  if(PORTAbits.RA0 ==1 || PORTAbits.RA2 ==1 ){
-            break;
-        }
-        LATB = 0b11111111; // 8
-        __delay_ms(1000);
-
-//
-        if(PORTAbits.RA0 ==1 || PORTAbits.RA2 ==1 ){
-            break;
-        }}
-        
-        return;
-};
-void secuencia3(void){
-    for(int i = 1 ; i <= 15; i++){
-        __delay_ms(200);
-        if(PORTAbits.RA0 ==1 || PORTAbits.RA1 ==1  ){
-            break;
-        }
-                
-          LATB = 0b11101110; //A
-        __delay_ms(1000);
-          if(PORTAbits.RA0 ==1 || PORTAbits.RA1 ==1 ){
-            break;
-        }
-          LATB = 0b00111110; //B
-        __delay_ms(1000);
-          if(PORTAbits.RA0 ==1 || PORTAbits.RA1 ==1 ){
-            break;
-        }
-          LATB = 0b10011100; //C
-        __delay_ms(1000);
-          if(PORTAbits.RA0 ==1 || PORTAbits.RA1 ==1 ){
-            break;
-        }
-          LATB = 0b01111010; //D
-        __delay_ms(1000);
-          if(PORTAbits.RA0 ==1 || PORTAbits.RA1 ==1 ){
-            break;
-        }
-          LATB = 0b10011110; //E
-        __delay_ms(1000);
-          if(PORTAbits.RA0 ==1 || PORTAbits.RA1 ==1 ){
-            break;
-        }
-          LATB = 0b10001110; //F
-        __delay_ms(1000);
-        
-
-        if(PORTAbits.RA0 ==1 || PORTAbits.RA1 ==1 ){
-            break;
-        }
-        }
-        return;
-};
 void main(void)
 {
     // initialize the device
@@ -183,19 +71,9 @@ void main(void)
 
 
     while (1) {
-        __delay_ms(200);
-        
-        if (PORTAbits.RA0 == 1) {
-            secuencia1();
-        }
-        if (PORTAbits.RA1 == 1) {
-            secuencia2();
-        }
-        if (PORTAbits.RA2 == 1) {
-            secuencia3();
-        }
-
-
+//        I2C_LCD_Init(1,"HOLA");
+//        __delay_ms(900);
+//        I2C_LCD_Cmd(2,12);
 
     }
 }
